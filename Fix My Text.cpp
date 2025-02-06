@@ -46,8 +46,9 @@ using namespace Gdiplus;
 #define TID_CTRLC				3U
 #define TID_ANYKEY				4U
 //GitHub links
-#define GITHUB_MAIN				L"https://github.com/ParadiseMan900/Fix-my-text"
-#define GITHUB_RELEASE			L"https://github.com/ParadiseMan900/Fix-my-text/releases/latest"
+#define GITHUB_MAIN				L"https://github.com/C-like-900/Fix-my-text"
+#define GITHUB_RELEASE			L"https://github.com/C-like-900/Fix-my-text/releases/latest"
+#define GITHUB_TAGS				L"https://api.github.com/repos/C-like-900/Fix-my-text/tags?per_page=1"
 //Settings name
 #define SETT_FILE				L"%appdata%\\FMT_Settings.txt"
 //Bool Settings Departments
@@ -174,14 +175,14 @@ Hotkey defaultHkSett[] = { { MOD_SHIFT | MOD_WIN, 'Z' }, { MOD_SHIFT | MOD_WIN, 
 	{ MOD_ALT | MOD_WIN, 'Z' }, { MOD_ALT | MOD_WIN, 'X' } };
 Hotkey fileHkSett[sizeof(defaultHkSett) / sizeof(*defaultHkSett)];
 bool fileBoolSett[] = { 1, 1, 1, 1 };
-bool tempSett[] = { 0, 0, 0, 0, 0};
+bool tempSett[] = { 0, 0, 0, 0, 0 };
 
 void LogMsg(const char* msg, WORD msgColor)
 {
 	if (!consoleWin)
 		return;
 	ConslColor(msgColor);
-	printf("/#/ %s /#/\n", msg);
+	printf("# %s #\n", msg);
 	ConslColor(SC_WHITE);
 }
 void PrintStrData(StrData* data, const char* msg)
@@ -527,11 +528,9 @@ void FillRoundRectangle(Graphics* g, Brush* b, int x, int y, int width, int heig
 	path.CloseFigure();
 	g->FillPath(b, &path);
 }
-Color ColorrefToColor(COLORREF colr)
+Color ColorrefToColor(COLORREF color)
 {
-	Color result;
-	result.SetFromCOLORREF(colr);
-	return result;
+	return Color{ 255, GetRValue(color), GetGValue(color), GetBValue(color) };
 }
 SIZE GetTextSize(HDC hdc, UINT format, const wchar_t* text, RECT rt)
 {
@@ -1232,8 +1231,7 @@ bool IsNewVersionExist(void)
 	HINTERNET hInterOpen = InternetOpenW(L"fmt", INTERNET_OPEN_TYPE_PRECONFIG, NULL, NULL, 0);
 	if (!hInterOpen)
 		return result;
-	HINTERNET hInterconnect = InternetOpenUrlW(hInterOpen,
-		L"https://api.github.com/repos/ParadiseMan900/Fix-my-text/tags?per_page=1", NULL, 0, 0, 0);
+	HINTERNET hInterconnect = InternetOpenUrlW(hInterOpen, GITHUB_TAGS, NULL, 0, 0, 0);
 	if (!hInterconnect)
 		return result;
 	DWORD dataSize = 0;
@@ -1255,14 +1253,18 @@ bool IsNewVersionExist(void)
 		for (size_t i = 0; i != verSize; i++)
 			version[i] = str[VERSIONID + i];
 		if (strcmp(version, VERSION))
-		{
 			result = TRUE;
-			Shell_NotifyIconW(NIM_MODIFY, &nTray);
-		}
 		free(version);
 	}
 	free(str);
 	return result;
+}
+void SetNewVersionIcon(void)
+{
+	nTray.uFlags |= NIF_INFO;
+	DestroyIcon(nTray.hIcon);
+	nTray.hIcon = (HICON)LoadImageW(histance, MAKEINTRESOURCEW(IDI_ICON2), IMAGE_ICON, 0, 0, LR_DEFAULTSIZE);
+	Shell_NotifyIconW(NIM_MODIFY, &nTray);
 }
 const char* LoadAndWriteTXT(int nameID)
 {
@@ -1324,9 +1326,11 @@ void AddMenuButton(HMENU hMenu, UINT flags, byte id, const wchar_t* name, byte b
 }
 LRESULT CALLBACK IconReaction(HWND window, UINT message, WPARAM wParam, LPARAM lParam)
 {
+	static USHORT taskbarMsg = 0;
 	switch (message)
 	{
 	case WM_CREATE:
+		taskbarMsg = RegisterWindowMessageW(L"TaskbarCreated");
 		for (byte i = 0; i != sizeof(fileHkSett) / sizeof(*fileHkSett); i++)
 			RegisterHotKey(window, i + 1, fileHkSett[i].sys, fileHkSett[i].main);
 		break;
@@ -1335,7 +1339,10 @@ LRESULT CALLBACK IconReaction(HWND window, UINT message, WPARAM wParam, LPARAM l
 		{
 		case TID_NEWVER:
 			if (tempSett[BSID_NEW_VERSION] = IsNewVersionExist())
+			{
+				SetNewVersionIcon();
 				KillTimer(window, TID_NEWVER);
+			}
 			break;
 		case TID_MODAL:
 		{
@@ -1442,12 +1449,14 @@ LRESULT CALLBACK IconReaction(HWND window, UINT message, WPARAM wParam, LPARAM l
 		}
 		break;
 	default:
+		if(message == taskbarMsg)
+			Shell_NotifyIconW(NIM_ADD, &nTray);
 		break;
 	}
 	return DefWindowProcW(window, message, wParam, lParam);
 }
 /////////////////////////////////////////////////////////////////////////////////////
-int WINAPI wWinMain(_In_ HINSTANCE hInst, _In_opt_ HINSTANCE hInstPrev, _In_ WCHAR* cmdLine, _In_ int cmdShow)
+int WINAPI wWinMain(_In_ HINSTANCE hInst, _In_opt_ HINSTANCE hInstPrev, _In_ wchar_t* cmdLine, _In_ int cmdShow)
 {
 	////	Проверка на существование запущенной программы
 	HANDLE hMutex = CreateMutexW(0, TRUE, L"FMT");
@@ -1499,23 +1508,23 @@ int WINAPI wWinMain(_In_ HINSTANCE hInst, _In_opt_ HINSTANCE hInstPrev, _In_ WCH
 			}
 	}
 	////	Поиск, создание и регестрация окна, настройки
-	histance = hInst;
+	histance = hInst;	
 	{
 		////	Регистрация классов
 		WNDCLASS wc;
-		WNDCLASSEX wc2;
 		ZeroMemory(&wc, sizeof(wc));
-		ZeroMemory(&wc2, sizeof(wc2));
 		wc.lpfnWndProc = IconReaction;
 		wc.hInstance = histance;
 		wc.lpszClassName = WCN_ICON;
+		RegisterClassW(&wc);
+		WNDCLASSEX wc2;
+		ZeroMemory(&wc2, sizeof(wc2));
 		wc2.cbSize = sizeof(wc2);
 		wc2.lpfnWndProc = SettReaction;
 		wc2.hInstance = histance;
 		wc2.lpszClassName = WCN_SETT;
 		wc2.hIcon = (HICON)LoadImageW(histance, MAKEINTRESOURCEW(IDI_ICON1), IMAGE_ICON, 256, 256, 0);
-		wc2.hIconSm = (HICON)LoadImageW(histance, MAKEINTRESOURCEW(IDI_ICON1), IMAGE_ICON, 0, 0, LR_DEFAULTSIZE | LR_SHARED);
-		RegisterClassW(&wc);
+		wc2.hIconSm = (HICON)LoadImageW(histance, MAKEINTRESOURCEW(IDI_ICON1), IMAGE_ICON, 0, 0, LR_DEFAULTSIZE);
 		RegisterClassExW(&wc2);
 		////	Создание и добавление окна (в виде иконки) в трей
 		ZeroMemory(&nTray, sizeof(nTray));
@@ -1525,20 +1534,19 @@ int WINAPI wWinMain(_In_ HINSTANCE hInst, _In_opt_ HINSTANCE hInstPrev, _In_ WCH
 		nTray.uFlags = NIF_ICON | NIF_MESSAGE | NIF_TIP;
 		nTray.uCallbackMessage = WM_USER;
 		//IDI_ICON1 - ID Иконки из файла ресурсов.
-		nTray.hIcon = (HICON)LoadImageW(histance, MAKEINTRESOURCEW(IDI_ICON1), IMAGE_ICON, 0, 0, LR_DEFAULTSIZE | LR_SHARED);
+		nTray.hIcon = (HICON)LoadImageW(histance, MAKEINTRESOURCEW(IDI_ICON1), IMAGE_ICON, 0, 0, LR_DEFAULTSIZE);
 		lstrcpyW(nTray.szTip, L"Fix my text");
 		nTray.hBalloonIcon = (HICON)LoadImageW(histance, MAKEINTRESOURCEW(IDI_ICON2), IMAGE_ICON, 0, 0, 0);
 		nTray.dwInfoFlags = NIIF_USER | NIIF_LARGE_ICON | NIIF_RESPECT_QUIET_TIME;
 		lstrcpyW(nTray.szInfoTitle, L"Появилась новая версия приложения!");
 		lstrcpyW(nTray.szInfo, L"Нажмите на иконку, чтобы перейти на страницу с новой версией приложения");
 		Shell_NotifyIconW(NIM_ADD, &nTray);
-		nTray.uFlags |= NIF_INFO;
-		DestroyIcon(nTray.hIcon);
-		nTray.hIcon = (HICON)LoadImageW(histance, MAKEINTRESOURCEW(IDI_ICON2), IMAGE_ICON, 0, 0, LR_DEFAULTSIZE);
 	}
 	////	Провкерка новой версии
-	if (!(tempSett[BSID_NEW_VERSION] = IsNewVersionExist()))
-		SetTimer(nTray.hWnd, TID_NEWVER, 900'000, NULL);	//Каждые 15 минут
+	if (tempSett[BSID_NEW_VERSION] = IsNewVersionExist())
+		SetNewVersionIcon();
+	else SetTimer(nTray.hWnd, TID_NEWVER, 900'000, NULL);	//Каждые 15 минут
+	
 	////	ВСЕ ПЕРЕМЕННЫЕ 
 	StrData conservation, selected;
 	ZeroMemory(&conservation, sizeof(StrData));
@@ -1665,5 +1673,6 @@ int WINAPI wWinMain(_In_ HINSTANCE hInst, _In_opt_ HINSTANCE hInstPrev, _In_ WCH
 		FreeConsole();
 	GdiplusShutdown(token);
 	ReleaseMutex(hMutex);
+	CloseHandle(hMutex);
 	return 0;
 }
