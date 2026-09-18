@@ -1,0 +1,9 @@
+﻿#include "ResourceDefines.h"
+
+// Определение иконок
+ICON_FMT                ICON    "Pictures\\FMT.ico"
+ICON_FMT_NEW_VERSION    ICON    "Pictures\\FMT New version.ico"
+
+// Определение картинок
+BITMAP_SETTINGS         BITMAP  "Pictures\\Settings.bmp"
+BITMAP_EXIT             BITMAP  "Pictures\\Exit.bmp"

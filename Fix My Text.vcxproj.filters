@@ -5,41 +5,399 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
+    <Filter Include="Исходные файлы\Features">
+      <UniqueIdentifier>{D83E64AA-C827-4C13-9D25-6840C15DDA01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Features\Modules">
+      <UniqueIdentifier>{98D3124E-A845-4B1F-9D70-6472F226813D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Tools">
+      <UniqueIdentifier>{A7A8EE8D-5437-4F8D-8A5A-DCE264403C6C}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Файлы заголовков">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
+    <Filter Include="Файлы заголовков\Features">
+      <UniqueIdentifier>{8B57FB32-F2D8-45CB-B107-1047192774C2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Features\Modules">
+      <UniqueIdentifier>{1AAE9345-CE70-4E75-B092-6F4C22B827C6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Tools">
+      <UniqueIdentifier>{4A6D9569-67C8-44DF-B7D8-4D02A68593D3}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Файлы ресурсов">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Исходные файлы\Settings">
+      <UniqueIdentifier>{A89DB34B-2C5E-432D-8745-020B73F75111}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Settings\Engine">
+      <UniqueIdentifier>{4E4C2753-8D72-4D7C-A63E-11FB6C561B11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Settings\Blocks">
+      <UniqueIdentifier>{20D3A50C-DA75-4F5A-8C86-BF36E1F6B111}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Settings">
+      <UniqueIdentifier>{1120D054-1A87-4B45-B445-0AF6D06E2111}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Settings\Engine">
+      <UniqueIdentifier>{98F07322-D3A5-456C-9EBF-881BB7B62111}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Settings\Blocks">
+      <UniqueIdentifier>{4C212EEE-F6B6-47D6-B2E3-114233FB2111}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Fix My Text.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Code\Application.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Code\Logger.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Code\LogFrame.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Code\Mutex.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Code\Hotkey.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Code\Features\Modules\Module.cpp">
+      <Filter>Исходные файлы\Features\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Code\Features\Modules\SwapLayoutModule.cpp">
+      <Filter>Исходные файлы\Features\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Code\Features\Modules\InvertCaseModule.cpp">
+      <Filter>Исходные файлы\Features\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Code\Features\Modules\WebSearchModule.cpp">
+      <Filter>Исходные файлы\Features\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Code\Features\Modules\WebTranslateModule.cpp">
+      <Filter>Исходные файлы\Features\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Code\Features\Modules\ApiTranslateModule.cpp">
+      <Filter>Исходные файлы\Features\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Code\Features\ModuleManager.cpp">
+      <Filter>Исходные файлы\Features</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Code\Tools\KeyboardTools.cpp">
+      <Filter>Исходные файлы\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Code\Tools\UrlTools.cpp">
+      <Filter>Исходные файлы\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Code\Tools\TextTools.cpp">
+      <Filter>Исходные файлы\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Code\Tray.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Code\Features\Clipboard.cpp">
+      <Filter>Исходные файлы\Features</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Code\Settings\Blocks\ScrollBarClass.cpp">
+      <Filter>Исходные файлы\Settings\Blocks</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Code\Settings\Blocks\ScrollClass.cpp">
+      <Filter>Исходные файлы\Settings\Blocks</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Code\Settings\Blocks\ScrollContextClass.cpp">
+      <Filter>Исходные файлы\Settings\Blocks</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Code\Settings\Engine\Animation\AnimationClass.cpp">
+      <Filter>Исходные файлы\Settings\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Code\Settings\Engine\Animation\AnimationProperties.cpp">
+      <Filter>Исходные файлы\Settings\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Code\Settings\Engine\Blocks\BlockClass.cpp">
+      <Filter>Исходные файлы\Settings\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Code\Settings\Engine\Blocks\BlurClass.cpp">
+      <Filter>Исходные файлы\Settings\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Code\Settings\Engine\Blocks\BoxClass.cpp">
+      <Filter>Исходные файлы\Settings\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Code\Settings\Engine\Blocks\ColorRGB.cpp">
+      <Filter>Исходные файлы\Settings\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Code\Settings\Engine\Blocks\ColorRGBA.cpp">
+      <Filter>Исходные файлы\Settings\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Code\Settings\Engine\Blocks\CompositeClass.cpp">
+      <Filter>Исходные файлы\Settings\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Code\Settings\Engine\Blocks\Formula\Formula.cpp">
+      <Filter>Исходные файлы\Settings\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Code\Settings\Engine\Blocks\Formula\Limit.cpp">
+      <Filter>Исходные файлы\Settings\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Code\Settings\Engine\Blocks\Formula\SideFormula.cpp">
+      <Filter>Исходные файлы\Settings\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Code\Settings\Engine\Blocks\MouseEvents.cpp">
+      <Filter>Исходные файлы\Settings\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Code\Settings\Engine\Blocks\PictureClass.cpp">
+      <Filter>Исходные файлы\Settings\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Code\Settings\Engine\Blocks\RectEx.cpp">
+      <Filter>Исходные файлы\Settings\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Code\Settings\Engine\Blocks\RootClass.cpp">
+      <Filter>Исходные файлы\Settings\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Code\Settings\Engine\Blocks\TextClass.cpp">
+      <Filter>Исходные файлы\Settings\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Code\Settings\Engine\Graphics.cpp">
+      <Filter>Исходные файлы\Settings\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Code\Settings\Settings.cpp">
+      <Filter>Исходные файлы\Settings</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="resource.h">
+    <ClInclude Include="Source\Code\Application.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="Fix My Text.rc">
-      <Filter>Файлы ресурсов</Filter>
-    </ResourceCompile>
+    <ClInclude Include="Source\Code\Application.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Logger.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Logger.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Aliases.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\LogFrame.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Mutex.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Mutex.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Hotkey.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Features\Modules\Module.hpp">
+      <Filter>Файлы заголовков\Features\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Features\Modules\Module.h">
+      <Filter>Файлы заголовков\Features\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Features\Modules\SwapLayoutModule.hpp">
+      <Filter>Файлы заголовков\Features\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Features\ModuleManager.hpp">
+      <Filter>Файлы заголовков\Features</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Features\ModuleManager.h">
+      <Filter>Файлы заголовков\Features</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Features\Clipboard.hpp">
+      <Filter>Файлы заголовков\Features</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Tools\KeyboardTools.hpp">
+      <Filter>Файлы заголовков\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Tools\UrlTools.hpp">
+      <Filter>Файлы заголовков\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Tray.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Tools\TextTools.h">
+      <Filter>Файлы заголовков\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Tools\TextTools.hpp">
+      <Filter>Файлы заголовков\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Tray.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ResourceDefines.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Features\Clipboard.h">
+      <Filter>Файлы заголовков\Features</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Features\Modules\InvertCaseModule.hpp">
+      <Filter>Файлы заголовков\Features\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Features\Modules\WebSearchModule.h">
+      <Filter>Файлы заголовков\Features\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Features\Modules\WebSearchModule.hpp">
+      <Filter>Файлы заголовков\Features\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Features\Modules\WebTranslateModule.h">
+      <Filter>Файлы заголовков\Features\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Features\Modules\WebTranslateModule.hpp">
+      <Filter>Файлы заголовков\Features\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Features\Modules\ApiTranslateModule.h">
+      <Filter>Файлы заголовков\Features\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Features\Modules\ApiTranslateModule.hpp">
+      <Filter>Файлы заголовков\Features\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Settings\Blocks\ScrollBarClass.h">
+      <Filter>Файлы заголовков\Settings\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Settings\Blocks\ScrollBarClass.hpp">
+      <Filter>Файлы заголовков\Settings\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Settings\Blocks\ScrollClass.h">
+      <Filter>Файлы заголовков\Settings\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Settings\Blocks\ScrollClass.hpp">
+      <Filter>Файлы заголовков\Settings\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Settings\Blocks\ScrollContextClass.h">
+      <Filter>Файлы заголовков\Settings\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Settings\Blocks\ScrollContextClass.hpp">
+      <Filter>Файлы заголовков\Settings\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Settings\Engine\Animation\AnimationClass.h">
+      <Filter>Файлы заголовков\Settings\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Settings\Engine\Animation\AnimationClass.hpp">
+      <Filter>Файлы заголовков\Settings\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Settings\Engine\Animation\AnimationProperties.h">
+      <Filter>Файлы заголовков\Settings\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Settings\Engine\Animation\AnimationProperties.hpp">
+      <Filter>Файлы заголовков\Settings\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Settings\Engine\Animation\TemplateAnimation.hpp">
+      <Filter>Файлы заголовков\Settings\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Settings\Engine\Blocks\BlockClass.h">
+      <Filter>Файлы заголовков\Settings\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Settings\Engine\Blocks\BlockClass.hpp">
+      <Filter>Файлы заголовков\Settings\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Settings\Engine\Blocks\BlurClass.h">
+      <Filter>Файлы заголовков\Settings\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Settings\Engine\Blocks\BlurClass.hpp">
+      <Filter>Файлы заголовков\Settings\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Settings\Engine\Blocks\BoxClass.h">
+      <Filter>Файлы заголовков\Settings\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Settings\Engine\Blocks\BoxClass.hpp">
+      <Filter>Файлы заголовков\Settings\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Settings\Engine\Blocks\ColorRGB.hpp">
+      <Filter>Файлы заголовков\Settings\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Settings\Engine\Blocks\ColorRGBA.hpp">
+      <Filter>Файлы заголовков\Settings\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Settings\Engine\Blocks\CompositeClass.h">
+      <Filter>Файлы заголовков\Settings\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Settings\Engine\Blocks\CompositeClass.hpp">
+      <Filter>Файлы заголовков\Settings\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Settings\Engine\Blocks\Event.h">
+      <Filter>Файлы заголовков\Settings\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Settings\Engine\Blocks\Formula\Formula.h">
+      <Filter>Файлы заголовков\Settings\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Settings\Engine\Blocks\Formula\Formula.hpp">
+      <Filter>Файлы заголовков\Settings\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Settings\Engine\Blocks\Formula\Limit.hpp">
+      <Filter>Файлы заголовков\Settings\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Settings\Engine\Blocks\Formula\SideFormula.hpp">
+      <Filter>Файлы заголовков\Settings\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Settings\Engine\Blocks\MouseEvents.h">
+      <Filter>Файлы заголовков\Settings\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Settings\Engine\Blocks\MouseEvents.hpp">
+      <Filter>Файлы заголовков\Settings\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Settings\Engine\Blocks\PictureClass.h">
+      <Filter>Файлы заголовков\Settings\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Settings\Engine\Blocks\PictureClass.hpp">
+      <Filter>Файлы заголовков\Settings\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Settings\Engine\Blocks\RectEx.h">
+      <Filter>Файлы заголовков\Settings\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Settings\Engine\Blocks\RectEx.hpp">
+      <Filter>Файлы заголовков\Settings\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Settings\Engine\Blocks\RootClass.h">
+      <Filter>Файлы заголовков\Settings\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Settings\Engine\Blocks\RootClass.hpp">
+      <Filter>Файлы заголовков\Settings\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Settings\Engine\Blocks\TextClass.h">
+      <Filter>Файлы заголовков\Settings\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Settings\Engine\Blocks\TextClass.hpp">
+      <Filter>Файлы заголовков\Settings\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Settings\Engine\D2Defines.h">
+      <Filter>Файлы заголовков\Settings\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Settings\Engine\Graphics.h">
+      <Filter>Файлы заголовков\Settings\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Settings\Engine\Graphics.hpp">
+      <Filter>Файлы заголовков\Settings\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Settings\Settings.h">
+      <Filter>Файлы заголовков\Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Settings\Settings.hpp">
+      <Filter>Файлы заголовков\Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Code\Tools\UrlTools.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="FMT.ico">
       <Filter>Файлы ресурсов</Filter>
     </Image>
-    <Image Include="KREST.bmp">
+    <Image Include="EXIT.bmp">
       <Filter>Файлы ресурсов</Filter>
     </Image>
-    <Image Include="PALKA.bmp">
+    <Image Include="SETTINGS.bmp">
       <Filter>Файлы ресурсов</Filter>
     </Image>
-    <Image Include="KONSOL.bmp">
+    <Image Include="LOG.bmp">
       <Filter>Файлы ресурсов</Filter>
     </Image>
     <Image Include="FMT+.ico">
@@ -47,6 +405,8 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="FMT_Consol.txt" />
+    <ResourceCompile Include="Source\ResourcePaths.rc">
+      <Filter>Файлы ресурсов</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>
